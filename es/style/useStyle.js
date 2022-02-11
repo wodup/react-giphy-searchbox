@@ -16,7 +16,7 @@ export function useStyle(name, rules) {
   addStyle(name, rules);
 }
 
-if (module && module.hot) {
+if (typeof module !== 'undefined' && module.hot) {
   module.hot.dispose(function () {
     styles.forEach(function (style) {
       if (document.head.contains(style)) {
